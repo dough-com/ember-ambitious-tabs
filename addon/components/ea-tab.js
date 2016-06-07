@@ -3,8 +3,8 @@ import layout from '../templates/components/ea-tab';
 
 export default Ember.Component.extend({
   layout,
-  classNames: ["ea-tab"],
-  classNameBindings: ["isActive:active:"],
+  classNames: ["ea-tab", "tabs-panel"],
+  classNameBindings: ["isActive:is-active:"],
 
   _parentObserver: Ember.on("init", Ember.observer('parent', function(){
     let parent = this.get("parent")
