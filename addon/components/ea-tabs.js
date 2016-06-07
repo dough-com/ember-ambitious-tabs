@@ -3,6 +3,12 @@ import layout from '../templates/components/ea-tabs';
 
 export default Ember.Component.extend({
   layout,
-  titles: Ember.computed.mapBy('children.[]', 'title'),
-  children: Ember.A()
+  children: Ember.A(),
+  classNames: ["ea-tabs"],
+
+  actions: {
+    select(tab){
+      this.set('selected', tab)
+    }
+  }
 });

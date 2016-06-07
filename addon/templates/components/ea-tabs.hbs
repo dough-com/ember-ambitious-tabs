@@ -1,8 +1,10 @@
 <ul class="titles">
-  {{#each titles as |title|}}
-    <li>{{title}}</li>
+  {{#each children as |tab|}}
+    <li class={{if tab.isActive 'is-active'}} {{action 'select' tab}}>{{tab.title}}</li>
   {{/each}}
 </ul>
-{{yield (hash
-  tab=(component 'ea-tab' parent=this)
-)}}
+<div class="contents">
+  {{yield (hash
+    tab=(component 'ea-tab' parent=this)
+  )}}
+</div>
