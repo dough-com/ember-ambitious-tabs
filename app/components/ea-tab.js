@@ -1,0 +1,1 @@
+export { default } from 'ember-ambitious-tabs/components/ea-tab';
