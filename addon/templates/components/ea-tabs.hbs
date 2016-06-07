@@ -1,4 +1,8 @@
-Hello
+<ul class="titles">
+  {{#each titles as |title|}}
+    <li>{{title}}</li>
+  {{/each}}
+</ul>
 {{yield (hash
-  tab=(component 'ea-tab')
+  tab=(component 'ea-tab' parent=this)
 )}}
