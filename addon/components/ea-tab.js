@@ -1,16 +1,14 @@
-import Ember from 'ember';
-import layout from '../templates/components/ea-tab';
+import Ember from 'ember'
 
 export default Ember.Component.extend({
-  layout,
-  classNames: ["ea-tab", "tabs-panel"],
-  classNameBindings: ["isActive:is-active:"],
+  classNames: ['ea-tab', 'tabs-panel'],
+  classNameBindings: ['isActive'],
 
-  _parentObserver: Ember.on("init", Ember.observer('parent', function(){
-    let parent = this.get("parent")
-    parent.get("children").pushObject(this)
+  _parentObserver: Ember.on('init', Ember.observer('parent', function () {
+    let parent = this.get('parent')
+    parent.get('children').pushObject(this)
   })),
-  isActive: Ember.computed('parent.selected', function(){
+  isActive: Ember.computed('parent.selected', function () {
     return this === this.get('parent.selected')
   })
-});
+})

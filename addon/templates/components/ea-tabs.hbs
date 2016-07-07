@@ -1,11 +1,11 @@
-<ul class="tabs">
+<ul class='tabs'>
   {{#each children as |tab|}}
-    <li class="tabs-title {{if tab.isActive 'is-active'}}" {{action 'select' tab}}>
+    <li class='tabs-title {{if tab.isActive 'is-active'}}' {{action 'select' tab}}>
       <a aria-selected={{if tab.isActive 'true'}}>{{tab.title}}</a>
     </li>
   {{/each}}
 </ul>
-<div class="tabs-content">
+<div class='tabs-content'>
   {{yield (hash
     tab=(component 'ea-tab' parent=this)
   )}}
