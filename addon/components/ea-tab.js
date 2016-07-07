@@ -1,13 +1,22 @@
 import Ember from 'ember'
 
 export default Ember.Component.extend({
+  parent: null,
   classNames: ['ea-tab', 'tabs-panel'],
   classNameBindings: ['isActive'],
 
-  _parentObserver: Ember.on('init', Ember.observer('parent', function () {
+  didInsertElement () {
+    this._super(...arguments)
     let parent = this.get('parent')
-    parent.get('children').pushObject(this)
-  })),
+    parent.addTab(this)
+  },
+
+  willDestroyElement () {
+    this._super(...arguments)
+    let parent = this.get('parent')
+    parent.removeTab(this)
+  },
+
   isActive: Ember.computed('parent.selected', function () {
     return this === this.get('parent.selected')
   })
