@@ -17,7 +17,7 @@ export default Ember.Component.extend({
     parent.removeTab(this)
   },
 
-  isActive: Ember.computed('parent.selected', function () {
-    return this === this.get('parent.selected')
+  isActive: Ember.computed('parent.active', function () {
+    return this === this.get('parent.active')
   })
 })
