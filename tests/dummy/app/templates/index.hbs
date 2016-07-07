@@ -1,11 +1,25 @@
 {{#ea-tabs as |ea|}}
   {{#ea.tab title='Hello'}}
-    <h1>Hello world!</h1>
+    <em>Hello world!</em>
   {{/ea.tab}}
   {{#ea.tab title='Goodbye'}}
-    <h1>Goodbye cruel world!</h1>
+    <em>Goodbye cruel world!</em>
   {{/ea.tab}}
   {{#ea.tab title='Sailor Moon'}}
-    <h1>Neo-Crystal</h1>
+    <em>Neo-Crystal</em>
+  {{/ea.tab}}
+{{/ea-tabs}}
+
+<h2>Default selection</h2>
+
+{{#ea-tabs as |ea|}}
+  {{#ea.tab title='Foo'}}
+    SNAFU
+  {{/ea.tab}}
+  {{#ea.tab title='Bar' active=true}}
+    Barbarbar
+  {{/ea.tab}}
+  {{#ea.tab title='Booze' active=true}}
+    Glugglug
   {{/ea.tab}}
 {{/ea-tabs}}
