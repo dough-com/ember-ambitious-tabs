@@ -1,6 +1,6 @@
 <ul class='tabs'>
   {{#each children as |tab|}}
-    <li class='tabs-title {{if tab.isActive 'is-active'}}' {{action 'select' tab}}>
+    <li class='tabs-title {{if tab.isActive 'is-active'}}' {{action 'select' tab}} data-test-id={{tab.dasherizedTitle}}>
       <a aria-selected={{if tab.isActive 'true'}}>{{tab.title}}</a>
     </li>
   {{/each}}
