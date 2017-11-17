@@ -6,6 +6,15 @@ export default Ember.Component.extend({
   classNameBindings: ['isActive'],
   isActive: false,
   active: Ember.computed.alias('isActive'),
+  dasherizedTitle: Ember.computed('title', function () {
+    const title = this.get('title')
+
+    if (Ember.isNone(title)) {
+      return ''
+    }
+
+    return Ember.String.dasherize(title)
+  }),
 
   didInsertElement () {
     this._super(...arguments)
